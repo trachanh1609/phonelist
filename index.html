@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="phoneStore">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+	<title> PhoneStore </title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+    
+    <script type="text/javascript" src="phone_app.js"></script>	
+</head>
+<body ng-controller="StoreController as store">
+	<!-- Store Header  -->
+	<header>
+		<h1 class="text-center">Vincent's Phone Store</h1>
+		<h2 class="text-center">-An Angular Store-</h2>
+	</header>
+
+	<!-- Products Container -->
+	<div class="list-group">
+		
+		<!-- Product Container -->
+		<div class="list-group-item" ng-repeat="product in store.products">
+
+			<a ng-click="toggle = !toggle" data-placement="right" title="Click for more detail" data-delay='{"show": "100", "hide": "100"}' >
+			<h4>{{product.name}}</h4> 
+			<strong>Brief Description</strong> : {{product.description}}
+			<em class="pull-right">{{product.price | currency}}</em>
+			</a>
+			
+			<product-tabs></product-tabs>
+		</div>
+
+	</div>
+
+
+</body>
+</html>

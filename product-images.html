@@ -1,0 +1,12 @@
+<div ng-show="product.images.length">
+  <div class="img-wrap">
+    <img ng-src="{{product.images[gallery.current]}}" width="20%" height="20%"/>
+  </div>
+  <ul class="img-thumbnails clearfix">
+    <li class="small-image pull-left thumbnail" ng-repeat="image in product.images" ng-click="gallery.setCurrent(product.images.$indexOf(image))">
+      <div style="width: 150px; height: 150px;" >
+      	<img ng-src="{{image}}" class="img-thumbnail" style='max-height: 100%; max-width: 100%; object-fit: contain'/>
+      </div>
+    </li>
+  </ul>
+</div>
